@@ -1,0 +1,45 @@
+{
+  "id": "E147",
+  "value": 100.0520080561155,
+  "method": "Independent Python Decimal evaluation at 90 decimal digits; mathematical constants supplied to at least 85 digits. Expected numbers rounded once to IEEE-754 binary64. No JS imports.",
+  "cases": [
+    {
+      "name": "tenfold distance adds 20 dB",
+      "values": {
+        "d": 10000
+      },
+      "expected": 120.0520080561155
+    },
+    {
+      "name": "tenfold frequency adds 20 dB",
+      "values": {
+        "f": 24000000000.0
+      },
+      "expected": 120.0520080561155
+    },
+    {
+      "name": "one wavelength minimum separation",
+      "values": {
+        "f": 299792458,
+        "d": 1
+      },
+      "expected": 21.984197280441926
+    },
+    {
+      "name": "near-field input rejected",
+      "values": {
+        "f": 1,
+        "d": 1
+      },
+      "throws": true
+    },
+    {
+      "name": "very large distance and frequency remain finite in dB",
+      "values": {
+        "f": 1e+200,
+        "d": 1e+200
+      },
+      "expected": 7852.447783221884
+    }
+  ]
+}
